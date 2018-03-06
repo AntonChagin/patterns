@@ -3,15 +3,13 @@ let expect    = require("chai").expect;
 let Observer = require("../src/Obs");
 let Subject = require("../src/Sub");
 
-let log = "";
-let myTestHandler = function(item) {
-  log+=(item);
-};
-
 describe("Observer pattern", function() {
   describe("can sub and unsub", function() {
     it("subscribes, fires events, unsubscribes", function() {
-      log = "";
+      let log = "";
+      let myTestHandler = function(item) {
+        log+=(item);
+      };
 
       let reader = new Observer();
       let theme = new Subject();
@@ -24,7 +22,11 @@ describe("Observer pattern", function() {
   });
   describe("cheks that all subs received event", function() {
     it("send event to all subs", function() {
-      log = "";
+      let log = "";
+      let myTestHandler = function(item) {
+        log+=(item);
+      };
+
       let theme = new Subject();
       let reader1 = new Observer();
       let reader2 = new Observer();
@@ -38,7 +40,11 @@ describe("Observer pattern", function() {
   });
   describe("deliver event to only those who subscribed", function() {
     it("creates 2 subjects, but subscribes to only one of them", function() {
-      log = "";
+      let log = "";
+      let myTestHandler = function(item) {
+        log+=(item);
+      };
+      
       var cats = new Subject();
       var dogs = new Subject();
       var reader = new Observer();

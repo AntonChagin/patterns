@@ -2,12 +2,10 @@ let expect    = require("chai").expect;
 
 let Bus = require("../src/Bus");
 
-let log = "";
-
 describe("Pub/Sub pattern", function() {
   describe("can sub", function() {
     it("subscribes, fires events, unsubscribes", function() {
-      log = "";
+      let log = "";
       const bus = new Bus();
       let handler = function(message){
         log+=(`[${message.sender}]: ${message.text}`)
@@ -20,7 +18,7 @@ describe("Pub/Sub pattern", function() {
   });
   describe("deliver event to only those who subscribed", function() {
     it("creates 2 rooms, but send event to only one of them", function() {
-      log = "";
+      let log = "";
       const bus = new Bus();
       let FBIbugger = function(message){
         log+=(`[${message.sender}]: ${message.text}`)
@@ -38,7 +36,7 @@ describe("Pub/Sub pattern", function() {
   });
   describe("send message to room that does not exist", function() {
     it("send message to nowhere", function() {
-      log = "";
+      let log = "";
       const bus = new Bus()
       bus.publish('nowhere', { })
     });
