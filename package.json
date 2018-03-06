@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "pub/sub + observer",
   "main": "app.js",
+  "homepage": "https://antonchagin.github.io/patterns/",
   "scripts": {
     "test": "mocha"
   },
