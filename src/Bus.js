@@ -1,5 +1,6 @@
 /**
 * Паттерн Pub/Sub
+* Bus - шина сообщений
 */
 class Bus {
   constructor () {
